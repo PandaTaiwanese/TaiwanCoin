@@ -69,9 +69,9 @@ message(STATUS "ARGON2: CMAKE_INSTALL_BINDIR: ${CMAKE_INSTALL_BINDIR}")
 add_subdirectory(src)
 add_subdirectory(tool)
 
-if (UNIX)
-    add_subdirectory(man)
-endif()
+#if (UNIX)
+#    add_subdirectory(man)
+#endif()
 
 if (NOT SPECS)
     message(STATUS "ARGON2: Skipping latex documentation")
