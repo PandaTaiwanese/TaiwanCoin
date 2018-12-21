@@ -119,7 +119,7 @@ if (UNIX)
         set(CPACK_PACKAGE_LINKFLAGS "-pthread")
     endif()
 
-    configure_file ("${CMAKE_SOURCE_DIR}/cmake/argon2.pc.in" "${PROJECT_BINARY_DIR}/lib${CPACK_PACKAGE_NAME}.pc" @ONLY)
+    configure_file ("argon2.pc.in" "${PROJECT_BINARY_DIR}/lib${CPACK_PACKAGE_NAME}.pc" @ONLY)
     install (FILES "${PROJECT_BINARY_DIR}/lib${CPACK_PACKAGE_NAME}.pc" DESTINATION "${PKGCONFIG_INSTALL_DIR}")
 endif()
 
