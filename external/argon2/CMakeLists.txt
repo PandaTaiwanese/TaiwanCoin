@@ -67,7 +67,7 @@ message(STATUS "ARGON2: CMAKE_INSTALL_LIBDIR: ${CMAKE_INSTALL_LIBDIR}")
 message(STATUS "ARGON2: CMAKE_INSTALL_BINDIR: ${CMAKE_INSTALL_BINDIR}")
 
 add_subdirectory(src)
-add_subdirectory(tool)
+#add_subdirectory(tool)
 
 #if (UNIX)
 #    add_subdirectory(man)
