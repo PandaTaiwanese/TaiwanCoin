@@ -40,7 +40,7 @@ const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 620000;
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2              = 700000;
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3              = 800000;
 
-const uint64_t LWMA_3_DIFFICULTY_BLOCK_INDEX                 = 1200000;
+const uint64_t LWMA_3_DIFFICULTY_BLOCK_INDEX                 = 2000000;
 
 const unsigned EMISSION_SPEED_FACTOR                         = 25;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
@@ -151,7 +151,8 @@ const uint32_t KEY_IMAGE_CHECKING_BLOCK_INDEX                = 0;
 const uint32_t UPGRADE_HEIGHT_V2                             = 1;
 const uint32_t UPGRADE_HEIGHT_V3                             = 2;
 const uint32_t UPGRADE_HEIGHT_V4                             = 350000; // Upgrade height for CN-Lite Variant 1 switch.
-const uint32_t UPGRADE_HEIGHT_CURRENT                        = UPGRADE_HEIGHT_V4;
+const uint32_t UPGRADE_HEIGHT_V5                             = 1200000; // Upgrade height for CN-Turtle Variant 2 switch.
+const uint32_t UPGRADE_HEIGHT_CURRENT                        = UPGRADE_HEIGHT_V5;
 
 const unsigned UPGRADE_VOTING_THRESHOLD                      = 90;               // percent
 const uint32_t UPGRADE_VOTING_WINDOW                         = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
@@ -177,7 +178,7 @@ const uint64_t FORK_HEIGHTS[] =
 };
 
 /* MAKE SURE TO UPDATE THIS VALUE WITH EVERY MAJOR RELEASE BEFORE A FORK */
-const uint64_t SOFTWARE_SUPPORTED_FORK_INDEX                 = 6;
+const uint64_t SOFTWARE_SUPPORTED_FORK_INDEX                 = 7;
 
 const uint64_t FORK_HEIGHTS_SIZE = sizeof(FORK_HEIGHTS) / sizeof(*FORK_HEIGHTS);
 
@@ -210,6 +211,7 @@ const uint8_t  BLOCK_MAJOR_VERSION_1                         =  1;
 const uint8_t  BLOCK_MAJOR_VERSION_2                         =  2;
 const uint8_t  BLOCK_MAJOR_VERSION_3                         =  3;
 const uint8_t  BLOCK_MAJOR_VERSION_4                         =  4;
+const uint8_t  BLOCK_MAJOR_VERSION_5                         =  5;
 
 const uint8_t  BLOCK_MINOR_VERSION_0                         =  0;
 const uint8_t  BLOCK_MINOR_VERSION_1                         =  1;
@@ -227,8 +229,12 @@ const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
 
 // P2P Network Configuration Section - This defines our current P2P network version
 // and the minimum version for communication between nodes
-const uint8_t  P2P_CURRENT_VERSION                           = 3;
+const uint8_t  P2P_CURRENT_VERSION                           = 4;
 const uint8_t  P2P_MINIMUM_VERSION                           = 2;
+
+// This defines the minimum P2P version required for lite blocks propogation
+const uint8_t P2P_LITE_BLOCKS_PROPOGATION_VERSION            = 4;
+
 // This defines the number of versions ahead we must see peers before we start displaying
 // warning messages that we need to upgrade our software.
 const uint8_t  P2P_UPGRADE_WINDOW                            = 2;
